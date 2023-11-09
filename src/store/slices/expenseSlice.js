@@ -4,6 +4,7 @@ const expenseSlice = createSlice({
   name: 'expense',
   initialState: {
     data: [],
+    searchTerm: '',
   },
   reducers: {
     addExpense(state, action) {
@@ -14,8 +15,11 @@ const expenseSlice = createSlice({
         //time: TODO
       });
     },
+    changeSearchTerm(state, action) {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { addExpense } = expenseSlice.actions;
+export const { addExpense, changeSearchTerm } = expenseSlice.actions;
 export const expenseReducer = expenseSlice.reducer;
