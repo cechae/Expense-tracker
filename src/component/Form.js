@@ -23,7 +23,7 @@ function Form() {
     dispatch(changeName(e.target.value));
   };
   const handleAmountChange = (e) => {
-    dispatch(changeAmount(e.target.value));
+    dispatch(changeAmount(parseInt(e.target.value)));
   };
 
   return (

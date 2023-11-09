@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import Search from './Search';
 import { changeSearchTerm } from '../store/index';
 import { AiOutlineSearch, AiFillCaretRight } from 'react-icons/ai';
+import Value from './Value';
 
 function ExpenseList() {
   const dispatch = useDispatch();
@@ -30,22 +31,23 @@ function ExpenseList() {
     <div className="panel">
       <h4 className="panel-heading">All Expenses</h4>
 
-      <div class="panel-block">
-        <p class="control has-icons-left">
+      <div className="panel-block">
+        <p className="control has-icons-left">
           <input
-            class="input"
+            className="input"
             type="text"
             placeholder="Search"
             value={searchTerm}
             onChange={handleChangeSearchTerm}
           />
-          <span class="icon is-left">
+          <span className="icon is-left">
             <AiOutlineSearch />
           </span>
         </p>
       </div>
 
       <div className="container is-fluid">{renderedExpenseList}</div>
+      <Value />
     </div>
   );
 }
